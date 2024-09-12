@@ -676,7 +676,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!4 &1107898544691266642
 Transform:
   m_ObjectHideFlags: 0
@@ -981,5 +981,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c861d07d94809fc4ca52567b2230c24b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 5
-  windSpeed: 0
+  Movement_speed: 35
+  rb: {fileID: 514006567084964040}
+  Dash_speed: 100
+  Dash_duration: 0.15
+  Dash_cooldown: 1
