@@ -8,14 +8,16 @@ public class PlayerScript : MonoBehaviour
     private Vector2 direction;
     public float Movement_speed;
     public Rigidbody2D rb;
-    [SerializeField] float Dash_speed = 10;
+    [SerializeField] float Dash_speed = 100;
     [SerializeField] float Dash_duration = 1f;
     [SerializeField] float Dash_cooldown = 1f;
     bool Is_dashing;
     bool Can_dash;
+    public LogicScript logic;
 
     void Start()
     {
+        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
         Can_dash = true;
     }
 
@@ -25,11 +27,21 @@ public class PlayerScript : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
         {
-            direction.x = Input.GetKey(KeyCode.A) ? -1 : 1;
+            if (Input.GetKey(KeyCode.A))
+            {
+                direction.x = -1;
+                logic.SetWind(180, 10);
+            }
+            else
+            {
+                direction.x = 1;
+                logic.SetWind(0, 10);
+            }
         }
         else
         {
             direction.x = 0;
+            logic.SetWind(0, 0);
         }
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && Can_dash)
