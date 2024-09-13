@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,25 +26,33 @@ public class PlayerScript : MonoBehaviour
     {
         if (Is_dashing) return;
 
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
         {
-            if (Input.GetKey(KeyCode.A))
-            {
-                direction.x = -1;
-                logic.SetWind(180, 10);
-            }
-            else
-            {
-                direction.x = 1;
-                logic.SetWind(0, 10);
-            }
+            logic.SetWindUp(90, 100, 100);
         }
         else
         {
-            direction.x = 0;
-            logic.SetWind(0, 0);
+            logic.SetWindUp(0, 0, 0);
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+            {
+                if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+                {
+                    direction.x = -1;
+                    logic.SetWindSide(180, 5, 0);
+                }
+                else if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
+                {
+                    direction.x = 1;
+                    logic.SetWindSide(0, 5, 0);
+                }
+            }
+            else
+            {
+                direction.x = 0;
+                logic.SetWindSide(0, 0, 0);
+                logic.SetWindUp(0, 0, 0);
+            }
         }
-
         if (Input.GetKeyDown(KeyCode.LeftShift) && Can_dash)
         {
             StartCoroutine(Dash());

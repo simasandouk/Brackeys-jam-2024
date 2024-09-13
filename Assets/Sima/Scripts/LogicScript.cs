@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class LogicScript : MonoBehaviour
 {
-    public AreaEffector2D wind;
+    public AreaEffector2D windSide;
+    public AreaEffector2D windUp;
     // Start is called before the first frame update
     void Start()
     {
-        wind = GameObject.FindGameObjectWithTag("Wind").GetComponent<AreaEffector2D>();
-        wind.forceMagnitude = 0;
-        wind.forceAngle = 0;
+        windSide = GameObject.FindGameObjectWithTag("WindSide").GetComponent<AreaEffector2D>();
+        windUp = GameObject.FindGameObjectWithTag("WindUp").GetComponent<AreaEffector2D>();
+        windSide.forceMagnitude = windSide.forceAngle = windUp.forceAngle = windUp.forceMagnitude = 0;
     }
 
     // Update is called once per frame
@@ -18,10 +19,16 @@ public class LogicScript : MonoBehaviour
     {
 
     }
-
-    public void SetWind(float angle, float magnitude)
+    public void SetWindUp(float angle, float magnitude, float forceVariation)
     {
-        wind.forceAngle = angle;
-        wind.forceMagnitude = magnitude;
+        windUp.forceAngle = angle;
+        windUp.forceMagnitude = magnitude;
+        windUp.forceVariation = forceVariation;
+    }
+    public void SetWindSide(float angle, float magnitude, float forceVariation)
+    {
+        windSide.forceAngle = angle;
+        windSide.forceMagnitude = magnitude;
+        windSide.forceVariation = forceVariation;
     }
 }
