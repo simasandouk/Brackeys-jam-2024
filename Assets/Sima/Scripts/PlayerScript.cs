@@ -41,20 +41,18 @@ public class PlayerScript : MonoBehaviour
         {
             logic.SetWind(0, 0, 0);
         }
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+
+        if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
         {
-            if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
-            {
-                direction.x = -1;
-                if(Prev_pos != pos)
-                logic.SetWind(180, 10, 0);
-            }
-            else if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
-            {
-                direction.x = 1;
-                if(Prev_pos != pos)
-                logic.SetWind(0, 10, 0);
-            }
+            direction.x = -1;
+            if(Prev_pos != pos)
+            logic.SetWind(180, 10, 0);
+        }
+        else if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
+        {
+            direction.x = 1;
+            if(Prev_pos != pos)
+            logic.SetWind(0, 10, 0);
         }
         else
         {
