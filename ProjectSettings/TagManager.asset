@@ -5,7 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Logic
-  - Wind
+  - WindSide
+  - WindUp
   layers:
   - Default
   - TransparentFX

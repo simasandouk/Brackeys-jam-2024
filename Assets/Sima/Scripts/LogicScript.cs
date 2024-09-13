@@ -19,16 +19,10 @@ public class LogicScript : MonoBehaviour
     {
 
     }
-    public void SetWindUp(float angle, float magnitude, float forceVariation)
+    public void SetWind(float angle, float magnitude, float forceVariation)
     {
         windUp.forceAngle = angle;
         windUp.forceMagnitude = magnitude;
         windUp.forceVariation = forceVariation;
-    }
-    public void SetWindSide(float angle, float magnitude, float forceVariation)
-    {
-        windSide.forceAngle = angle;
-        windSide.forceMagnitude = magnitude;
-        windSide.forceVariation = forceVariation;
     }
 }
