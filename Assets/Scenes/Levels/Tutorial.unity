@@ -166,8 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d295f7903e6d14f48b18185d2097f3b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windSide: {fileID: 0}
-  windUp: {fileID: 0}
+  wind: {fileID: 0}
 --- !u!1 &432185965
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,7 +883,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -1219,6 +1218,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Movement_speed: 35
+  Prev_pos: -1
+  pos: 0
+  Max_velocity: 15
   rb: {fileID: 514006567084964040}
   Dash_speed: 100
   Dash_duration: 0.15

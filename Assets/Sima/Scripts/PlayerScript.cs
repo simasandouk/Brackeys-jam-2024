@@ -7,7 +7,7 @@ using UnityEngine.Animations;
 public class PlayerScript : MonoBehaviour
 {
     private Vector2 direction;
-    public float Movement_speed;
+    public float Movement_speed, Prev_pos = -1, pos = -1, Max_velocity;
     public Rigidbody2D rb;
     [SerializeField] float Dash_speed = 100;
     [SerializeField] float Dash_duration = 1f;
@@ -15,6 +15,7 @@ public class PlayerScript : MonoBehaviour
     bool Is_dashing;
     bool Can_dash;
     public LogicScript logic;
+    float timer = 0.4f;
 
     void Start()
     {
@@ -24,6 +25,12 @@ public class PlayerScript : MonoBehaviour
 
     void Update()
     {
+        timer -= Time.deltaTime;
+        if(timer <= 0)
+        {
+            Prev_pos = pos;
+            timer = 0.4f;
+        }
         if (Is_dashing) return;
 
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
@@ -32,33 +39,39 @@ public class PlayerScript : MonoBehaviour
         }
         else
         {
-            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+            logic.SetWind(0, 0, 0);
+        }
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        {
+            if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
             {
-                if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
-                {
-                    direction.x = -1;
-                    logic.SetWind(180, 10, 0);
-                }
-                else if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
-                {
-                    direction.x = 1;
-                    logic.SetWind(0, 10, 0);
-                }
+                direction.x = -1;
+                if(Prev_pos != pos)
+                logic.SetWind(180, 10, 0);
             }
-            else
+            else if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
             {
-                direction.x = 0;
-                logic.SetWind(0, 0, 0);
+                direction.x = 1;
+                if(Prev_pos != pos)
+                logic.SetWind(0, 10, 0);
             }
         }
+        else
+        {
+            direction.x = 0;
+            logic.SetWind(0, 0, 0);
+            logic.SetWind(0, 0, 0);
+        }
+        
         if (Input.GetKeyDown(KeyCode.LeftShift) && Can_dash)
         {
             StartCoroutine(Dash());
         }
         else
         {
-            rb.velocity = new Vector2(Movement_speed * Time.deltaTime * direction.x * 10, rb.velocity.y);
+            rb.velocity += new Vector2(Math.Min(Movement_speed, Math.Abs(direction.x* Max_velocity - rb.velocity.x)) * Time.deltaTime * direction.x, 0);
         }
+        pos = Mathf.Round(transform.position.x);
     }
 
     private IEnumerator Dash()
