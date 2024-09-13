@@ -16,8 +16,7 @@ public class PlayerScript : MonoBehaviour
     public LogicScript logic;
     public float maxHeight;
     private Vector2 direction;
-    private bool Is_dashing;
-    private bool Can_dash;
+    private bool Is_dashing, Can_dash, Can_up = true;
     private float timer = 0.4f;
 
     void Start()
@@ -28,6 +27,22 @@ public class PlayerScript : MonoBehaviour
 
     void Update()
     {
+        // raycasting to make sure player is within the max height
+        RaycastHit2D ground = Physics2D.Raycast(transform.position, Vector2.down);
+        if (ground.collider != null)
+        {
+            Debug.Log(ground.point.y - transform.position.y);
+            Can_up = true;
+            if (math.abs(ground.point.y - transform.position.y) >= maxHeight)
+            {
+                Debug.Log("raycast is working");
+                Can_up = false;
+                if (logic.wind.forceAngle > 0 && logic.wind.forceAngle < 180)
+                {
+                    logic.SetWind(0, 0, 0);
+                }
+            }
+        }
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
@@ -37,7 +52,7 @@ public class PlayerScript : MonoBehaviour
         if (Is_dashing) return;
 
         // player movement and wind control
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
+        if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D)) && Can_up)
         {
             logic.SetWind(90, 100, 100);
         }
@@ -76,20 +91,7 @@ public class PlayerScript : MonoBehaviour
         }
         pos = Mathf.Round(transform.position.x);
 
-        // raycasting to make sure player is within the max height
-        RaycastHit2D ground = Physics2D.Raycast(transform.position, Vector2.down, 30f, 3);
-        if (ground.collider != null)
-        {
-            if (math.abs(ground.distance - transform.position.y) >= maxHeight)
-            {
-                Debug.Log("raycast is working");
-                rb.velocity = new Vector2(rb.velocity.x, math.min(0, rb.velocity.y));
-                if (logic.wind.forceAngle > 0 && logic.wind.forceAngle < 180)
-                {
-                    logic.SetWind(0, 0, 0);
-                }
-            }
-        }
+        
     }
 
     private IEnumerator Dash()
