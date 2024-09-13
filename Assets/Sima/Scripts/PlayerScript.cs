@@ -38,12 +38,12 @@ public class PlayerScript : MonoBehaviour
                 if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
                 {
                     direction.x = -1;
-                    logic.SetWindSide(180, 5, 0);
+                    logic.SetWindSide(180, 10, 0);
                 }
                 else if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
                 {
                     direction.x = 1;
-                    logic.SetWindSide(0, 5, 0);
+                    logic.SetWindSide(0, 10, 0);
                 }
             }
             else
