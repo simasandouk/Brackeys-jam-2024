@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Animations;
 
@@ -76,17 +77,17 @@ public class PlayerScript : MonoBehaviour
         pos = Mathf.Round(transform.position.x);
 
         // raycasting to make sure player is within the max height
-        RaycastHit2D ground = Physics2D.Raycast(transform.position, Vector2.down, 30f);
-        if (ground)
+        RaycastHit2D ground = Physics2D.Raycast(transform.position, Vector2.down, 30f, 3);
+        if (ground.collider != null)
         {
-            if (math.abs(ground.transform.position.y - transform.position.y) >= maxHeight)
+            if (math.abs(ground.distance - transform.position.y) >= maxHeight)
             {
+                Debug.Log("raycast is working");
                 rb.velocity = new Vector2(rb.velocity.x, math.min(0, rb.velocity.y));
                 if (logic.wind.forceAngle > 0 && logic.wind.forceAngle < 180)
                 {
                     logic.SetWind(0, 0, 0);
                 }
-                ground.transform.GetComponent<SpriteRenderer>().color = Color.red;
             }
         }
     }
