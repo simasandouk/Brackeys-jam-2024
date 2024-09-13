@@ -31,7 +31,7 @@ public class PlayerScript : MonoBehaviour
         RaycastHit2D ground = Physics2D.Raycast(transform.position, Vector2.down);
         if (ground.collider != null)
         {
-            Debug.Log(ground.point.y - transform.position.y);
+            //Debug.Log(ground.point.y - transform.position.y);
             Can_up = true;
             if (math.abs(ground.point.y - transform.position.y) >= maxHeight)
             {
@@ -39,7 +39,7 @@ public class PlayerScript : MonoBehaviour
                 Can_up = false;
                 if (logic.wind.forceAngle > 0 && logic.wind.forceAngle < 180)
                 {
-                    logic.SetWind(0, 0, 0);
+                    logic.StopWind();
                 }
             }
         }
@@ -54,30 +54,29 @@ public class PlayerScript : MonoBehaviour
         // player movement and wind control
         if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D)) && Can_up)
         {
-            logic.SetWind(90, 100, 100);
+            logic.SetWindUp();
         }
         else
         {
-            logic.SetWind(0, 0, 0);
+            logic.StopWind();
         }
 
         if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
         {
             direction.x = -1;
             if (Prev_pos != pos)
-                logic.SetWind(180, 10, 0);
+                logic.SetWindSide(-1);
         }
         else if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
         {
             direction.x = 1;
             if (Prev_pos != pos)
-                logic.SetWind(0, 10, 0);
+                logic.SetWindSide(1);
         }
         else
         {
             direction.x = 0;
-            logic.SetWind(0, 0, 0);
-            logic.SetWind(0, 0, 0);
+            logic.StopWind();
         }
 
         // dashing (uwu)
@@ -91,7 +90,7 @@ public class PlayerScript : MonoBehaviour
         }
         pos = Mathf.Round(transform.position.x);
 
-        
+        logic.playerSpeedNormalized = math.abs(rb.velocity.x / Max_velocity);
     }
 
     private IEnumerator Dash()

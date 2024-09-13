@@ -167,6 +167,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wind: {fileID: 0}
+  playerSpeedNormalized: 0
+  maxWindStrength: 10
 --- !u!1 &432185965
 GameObject:
   m_ObjectHideFlags: 0
