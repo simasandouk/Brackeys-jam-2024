@@ -32,7 +32,6 @@ public class PlayerScript : MonoBehaviour
         }
         else
         {
-            logic.SetWind(0, 0, 0);
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
             {
                 if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
@@ -49,7 +48,6 @@ public class PlayerScript : MonoBehaviour
             else
             {
                 direction.x = 0;
-                logic.SetWind(0, 0, 0);
                 logic.SetWind(0, 0, 0);
             }
         }
