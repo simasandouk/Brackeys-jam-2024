@@ -6,7 +6,8 @@ public class LogicScript : MonoBehaviour
 {
     public AreaEffector2D wind;
     public float playerSpeedNormalized;
-    public float maxWindStrength;
+    public float WindStrength;
+    private float Wind_dir = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,19 +18,22 @@ public class LogicScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            Wind_dir *= -1;
+        }
     }
     public void SetWindUp()
     {
         wind.forceAngle = 90;
-        wind.forceMagnitude = maxWindStrength * 10 * playerSpeedNormalized;
-        wind.forceVariation = maxWindStrength * 10;
+        wind.forceMagnitude = WindStrength * 10;
+        wind.forceVariation = WindStrength * 10;
     }
     public void SetWindSide(int dir)
     {
-        wind.forceAngle = 0;
-        wind.forceMagnitude = maxWindStrength * playerSpeedNormalized * dir;
-        wind.forceVariation = maxWindStrength * playerSpeedNormalized;
+        wind.forceAngle = (Wind_dir*dir == 1) ? 0 : 180;
+        wind.forceMagnitude = WindStrength;
+        wind.forceVariation = WindStrength;
     }
 
     public void StopWind()

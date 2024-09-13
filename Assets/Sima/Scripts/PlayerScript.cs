@@ -8,13 +8,12 @@ using UnityEngine.Animations;
 
 public class PlayerScript : MonoBehaviour
 {
-    public float Movement_speed, Prev_pos = -1, pos = -1, Max_velocity;
+    public float Movement_speed, Prev_pos = -1, pos = -1, Max_velocity, maxHeight, MaxSpeed;
     public Rigidbody2D rb;
     [SerializeField] float Dash_speed = 100;
     [SerializeField] float Dash_duration = 1f;
     [SerializeField] float Dash_cooldown = 1f;
     public LogicScript logic;
-    public float maxHeight;
     private Vector2 direction;
     private bool Is_dashing, Can_dash, Can_up = true;
     private float timer = 0.4f;
@@ -31,7 +30,7 @@ public class PlayerScript : MonoBehaviour
         RaycastHit2D ground = Physics2D.Raycast(transform.position, Vector2.down);
         if (ground.collider != null)
         {
-            //Debug.Log(ground.point.y - transform.position.y);
+            Debug.Log(ground.point.y - transform.position.y);
             Can_up = true;
             if (math.abs(ground.point.y - transform.position.y) >= maxHeight)
             {
@@ -86,11 +85,11 @@ public class PlayerScript : MonoBehaviour
         }
         else
         {
-            rb.velocity += new Vector2(Math.Min(Movement_speed, Math.Abs(direction.x * Max_velocity - rb.velocity.x)) * Time.deltaTime * direction.x, 0);
+            rb.velocity += new Vector2(Math.Min(Movement_speed, Max_velocity - rb.velocity.x * direction.x) * Time.deltaTime * direction.x, 0);
         }
         pos = Mathf.Round(transform.position.x);
 
-        logic.playerSpeedNormalized = math.abs(rb.velocity.x / Max_velocity);
+        logic.playerSpeedNormalized = math.abs(rb.velocity.x / MaxSpeed);
     }
 
     private IEnumerator Dash()
