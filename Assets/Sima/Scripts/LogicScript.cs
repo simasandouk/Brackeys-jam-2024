@@ -22,7 +22,7 @@ public class LogicScript : MonoBehaviour
     public void SetWindUp()
     {
         wind.forceAngle = 90;
-        wind.forceMagnitude = maxWindStrength * 10 * playerSpeedNormalized;
+        wind.forceMagnitude = maxWindStrength * 10;
         wind.forceVariation = maxWindStrength * 10;
     }
     public void SetWindSide(int dir)
