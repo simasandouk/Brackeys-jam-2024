@@ -170,6 +170,7 @@ MonoBehaviour:
   WindStrength: 12
   MaxSpeed: 6
   MaxNormalized: 2.65
+  Wind_dir: 1
   stormy: 0
   lightningBolt: {fileID: 417629715}
   Speed: {fileID: 1506995582}
@@ -1160,7 +1161,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upWind: {fileID: 1555814666}
-  upWindMultiplier: 10
+  upWindMultiplier: 1
+  upWindInterval: 0.2
 --- !u!61 &1555814665
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2128,7 +2130,6 @@ MonoBehaviour:
   Dash_cooldown: 3
   logic: {fileID: 0}
   Is_grounded: 0
-  WindStrength: 0
   playerCollider: {fileID: 9193444042287988319}
 --- !u!212 &9193444042287988321
 SpriteRenderer:
