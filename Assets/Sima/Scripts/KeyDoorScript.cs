@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorScript : MonoBehaviour
+public class KeyDoorScript : MonoBehaviour
 {
     public Sprite opened;
     public Sprite closed;
