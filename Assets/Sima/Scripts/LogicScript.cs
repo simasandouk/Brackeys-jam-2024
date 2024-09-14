@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LogicScript : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class LogicScript : MonoBehaviour
     private float Wind_dir = 1;
     public bool stormy;
     public GameObject lightningBolt;
+    public Image Speed;
     private float timer = 0;
     public float lightningInterval;
     // Start is called before the first frame update
@@ -41,6 +43,7 @@ public class LogicScript : MonoBehaviour
                 LetThereBeLightning();
             }
         }
+        Speed.fillAmount = playerSpeedNormalized/24;
     }
     public void LetThereBeLightning()
     {
