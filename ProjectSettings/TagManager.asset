@@ -7,6 +7,7 @@ TagManager:
   - Logic
   - Undefined
   - Wind
+  - OneWayPlatform
   layers:
   - Default
   - TransparentFX

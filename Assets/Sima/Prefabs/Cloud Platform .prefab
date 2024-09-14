@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 6107519434566296266}
   - component: {fileID: 6107519434566296265}
   - component: {fileID: 6107519434566296264}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 'Cloud Platform '
-  m_TagString: Untagged
+  m_TagString: OneWayPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

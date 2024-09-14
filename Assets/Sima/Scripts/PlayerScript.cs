@@ -20,6 +20,9 @@ public class PlayerScript : MonoBehaviour
     private SpriteRenderer bunny;
     public bool Is_grounded;
     private Animator animator;
+    private GameObject currentOneWayPlatform;
+
+    [SerializeField] private BoxCollider2D playerCollider;
 
     void Start()
     {
@@ -29,7 +32,7 @@ public class PlayerScript : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         animator.SetFloat("X_velocity", Math.Abs(rb.velocity.x));
         animator.SetFloat("Y_velocity", Math.Abs(rb.velocity.y));
@@ -100,6 +103,16 @@ public class PlayerScript : MonoBehaviour
 
         logic.playerSpeedNormalized = math.abs(rb.velocity.x) / logic.MaxSpeed;
         //UnityEngine.Debug.Log(rb.velocity.x);
+
+        // get down through one way platform
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            Debug.Log("this fucker is being pressed");
+            if (currentOneWayPlatform != null)
+            {
+                StartCoroutine(DisableCollision());
+            }
+        }
     }
 
     private IEnumerator Dash()
@@ -117,11 +130,27 @@ public class PlayerScript : MonoBehaviour
     {
         Is_grounded = true;
         animator.SetBool("Is_hovering", !Is_grounded);
+        if (trigger.gameObject.CompareTag("OneWayPlatform"))
+        {
+            currentOneWayPlatform = trigger.gameObject;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D trigger)
     {
         Is_grounded = false;
         animator.SetBool("Is_hovering", !Is_grounded);
+        if (trigger.gameObject.CompareTag("OneWayPlatform"))
+        {
+            currentOneWayPlatform = null;
+        }
+    }
+
+    private IEnumerator DisableCollision()
+    {
+        BoxCollider2D platformCollider = currentOneWayPlatform.GetComponent<BoxCollider2D>();
+        Physics2D.IgnoreCollision(playerCollider, platformCollider);
+        yield return new WaitForSeconds(1f);
+        Physics2D.IgnoreCollision(playerCollider, platformCollider, false);
     }
 }
