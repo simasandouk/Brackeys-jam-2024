@@ -166,7 +166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d295f7903e6d14f48b18185d2097f3b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wind: {fileID: 0}
   playerSpeedNormalized: 0
   WindStrength: 12
   MaxSpeed: 6
@@ -175,6 +174,9 @@ MonoBehaviour:
   lightningBolt: {fileID: 417629715}
   Speed: {fileID: 1506995582}
   lightningInterval: 5
+  Is_dashing: 0
+  Can_dash: 1
+  Can_up: 1
 --- !u!1 &417629715
 GameObject:
   m_ObjectHideFlags: 0
@@ -938,6 +940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef5a17a9514f4c346b8ba2fc1cdf818a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sideWind: {fileID: 1048153582}
 --- !u!1 &1068183614
 GameObject:
   m_ObjectHideFlags: 0
@@ -1156,6 +1159,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d29c8840a758e4e4ea046b98fa50a7f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upWind: {fileID: 1555814666}
+  upWindMultiplier: 10
 --- !u!61 &1555814665
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2123,6 +2128,7 @@ MonoBehaviour:
   Dash_cooldown: 3
   logic: {fileID: 0}
   Is_grounded: 0
+  WindStrength: 0
   playerCollider: {fileID: 9193444042287988319}
 --- !u!212 &9193444042287988321
 SpriteRenderer:

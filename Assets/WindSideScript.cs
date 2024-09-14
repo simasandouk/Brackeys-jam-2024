@@ -4,15 +4,46 @@ using UnityEngine;
 
 public class WindSideScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public AreaEffector2D sideWind;
+    private LogicScript logic;
+
     void Start()
     {
-        
+        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
+        StopSideWind();
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+        {
+            if (logic.Wind_dir == 1)
+                FireSideWind(180);
+            else
+                FireSideWind(0);
+        }
+        else if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
+        {
+            if (logic.Wind_dir == 1)
+                FireSideWind(0);
+            else
+                FireSideWind(180);
+        }
+        else
+        {
+            StopSideWind();
+        }
+    }
+
+    void FireSideWind(float angle)
+    {
+        sideWind.forceAngle = angle;
+        sideWind.forceMagnitude = logic.WindStrength;
+        sideWind.forceVariation = logic.WindStrength;
+    }
+    void StopSideWind()
+    {
+        sideWind.forceAngle = 0;
+        sideWind.forceMagnitude = 0;
+        sideWind.forceVariation = 0;
     }
 }

@@ -15,7 +15,6 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] float Dash_cooldown = 1f;
     public LogicScript logic;
     private Vector2 direction;
-    private bool Is_dashing, Can_dash, Can_up = true;
     private float timer = 2f;
     private SpriteRenderer bunny;
     public bool Is_grounded;
@@ -27,29 +26,25 @@ public class PlayerScript : MonoBehaviour
     void Start()
     {
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
-        Can_dash = true;
+        logic.Can_dash = true;
         bunny = gameObject.GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         animator.SetFloat("X_velocity", Math.Abs(rb.velocity.x));
         animator.SetFloat("Y_velocity", Math.Abs(rb.velocity.y));
-        animator.SetBool("Is_dashing", Is_dashing);
+        animator.SetBool("Is_dashing", logic.Is_dashing);
         RaycastHit2D ground = Physics2D.Raycast(transform.position, Vector2.down);
         if (ground.collider != null)
         {
             //Debug.Log(ground.point.y - transform.position.y);
-            Can_up = true;
+            logic.Can_up = true;
             if (math.abs(ground.point.y - transform.position.y) >= maxHeight)
             {
                 Debug.Log("raycast is working");
-                Can_up = false;
-                if (logic.wind.forceAngle > 0 && logic.wind.forceAngle < 180)
-                {
-                    logic.StopWind();
-                }
+                logic.Can_up = false;
             }
         }
         timer -= Time.deltaTime;
@@ -58,40 +53,27 @@ public class PlayerScript : MonoBehaviour
             Prev_pos = pos;
             timer = 2f;
         }
-        if (Is_dashing) return;
+        if (logic.Is_dashing) return;
 
         // player movement and wind control
-        if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D)) && Can_up)
-        {
-            logic.SetWindUp();
-        }
-        else
-        {
-            logic.StopWind();
-        }
 
         if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
         {
             direction.x = -1;
-            if (Prev_pos != pos)
-                logic.SetWindSide(-1);
             bunny.flipX = true;
         }
         else if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
         {
             direction.x = 1;
-            if (Prev_pos != pos)
-                logic.SetWindSide(1);
             bunny.flipX = false;
         }
         else
         {
             direction.x = 0;
-            logic.StopWind();
         }
 
         // dashing (uwu)
-        if (Input.GetKeyDown(KeyCode.LeftShift) && Can_dash && direction.x != 0)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && logic.Can_dash && direction.x != 0)
         {
             StartCoroutine(Dash());
         }
@@ -107,9 +89,9 @@ public class PlayerScript : MonoBehaviour
         // get down through one way platform
         if (Input.GetKeyDown(KeyCode.S))
         {
-            Debug.Log("this fucker is being pressed");
             if (currentOneWayPlatform != null)
             {
+                Debug.Log("this fucker is being pressed and called");
                 StartCoroutine(DisableCollision());
             }
         }
@@ -117,13 +99,13 @@ public class PlayerScript : MonoBehaviour
 
     private IEnumerator Dash()
     {
-        Can_dash = false;
-        Is_dashing = true;
+        logic.Can_dash = false;
+        logic.Is_dashing = true;
         rb.velocity += new Vector2(Dash_speed * Time.deltaTime * direction.x, rb.velocity.y);
         yield return new WaitForSeconds(Dash_duration);
-        Is_dashing = false;
+        logic.Is_dashing = false;
         yield return new WaitForSeconds(Dash_cooldown);
-        Can_dash = true;
+        logic.Can_dash = true;
     }
 
     private void OnTriggerEnter2D(Collider2D trigger)
