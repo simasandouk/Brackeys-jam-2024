@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6046a969c9e78c847ad1497521f2c81d
+guid: 29d30035ae54fd747842ae8cbc82db41
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bunny_Hover_0
+      name: Bunny_Dash_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70f1f76337ef2f04ba0b73b033c0df57
-      internalID: 413809012
+      spriteID: 09f768dbee3fce04eb791903d058f523
+      internalID: -818832331
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bunny_Hover_1
+      name: Bunny_Dash_1
       rect:
         serializedVersion: 2
         x: 50
@@ -140,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfcc402afae7f034f9bbbe7b2bd0a128
-      internalID: 1919744945
+      spriteID: f87245f3499265a4fa7d13d622ad4e0e
+      internalID: -1641367722
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bunny_Hover_2
+      name: Bunny_Dash_2
       rect:
         serializedVersion: 2
         x: 100
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba39f5dde01bdc5499ce037668583ad7
-      internalID: -1811593566
+      spriteID: 0ccee91d967f73e4fb456ff9df70f0eb
+      internalID: -2016437153
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bunny_Hover_3
+      name: Bunny_Dash_3
       rect:
         serializedVersion: 2
         x: 150
@@ -182,14 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a15d12f692409f45927862324ce4f49
-      internalID: 948549227
+      spriteID: 01868576e54d96648b74caad3f12547a
+      internalID: 583521989
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bunny_Hover_4
+      name: Bunny_Dash_4
       rect:
         serializedVersion: 2
         x: 200
@@ -203,14 +203,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f15e68b2bbfbb134fac0269450063b1d
-      internalID: 202586750
+      spriteID: 82e00fecabcefbc4ba98514c61e18ba9
+      internalID: -358390597
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bunny_Hover_5
+      name: Bunny_Dash_5
       rect:
         serializedVersion: 2
         x: 250
@@ -224,14 +224,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c37b0851368505644a4c194cfa0d2000
-      internalID: -867608076
+      spriteID: f9694589aad2cf14b942fa806ce9617c
+      internalID: 269078560
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bunny_Hover_6
+      name: Bunny_Dash_6
       rect:
         serializedVersion: 2
         x: 300
@@ -245,14 +245,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6925d5c2ebb91a4099059999d91ff6e
-      internalID: 2106590048
+      spriteID: 3b805db5c08df14409cfdc1bdae51ca7
+      internalID: -377072466
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bunny_Hover_7
+      name: Bunny_Dash_7
       rect:
         serializedVersion: 2
         x: 350
@@ -266,14 +266,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58f2956883e89684ba8a21b65f75e92e
-      internalID: 531133507
+      spriteID: 01564541cd7d31d43b1632a2ba380cbd
+      internalID: 766606920
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bunny_Hover_8
+      name: Bunny_Dash_8
       rect:
         serializedVersion: 2
         x: 400
@@ -287,113 +287,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06c82b58da309b242b84dca0a2bdb080
-      internalID: 1040530101
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bunny_Hover_9
-      rect:
-        serializedVersion: 2
-        x: 450
-        y: 0
-        width: 50
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 982c3104c8cffa143afb34b58099fa63
-      internalID: 433446854
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bunny_Hover_10
-      rect:
-        serializedVersion: 2
-        x: 500
-        y: 0
-        width: 50
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e0364aa17b74e08489ed71b0c6dfc449
-      internalID: 1986034685
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bunny_Hover_11
-      rect:
-        serializedVersion: 2
-        x: 550
-        y: 0
-        width: 50
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b87b81872e9d66141b5517fbc88c369a
-      internalID: -1806401836
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bunny_Hover_12
-      rect:
-        serializedVersion: 2
-        x: 600
-        y: 0
-        width: 50
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1a0e5216586b6cd4eb790d45517f94cc
-      internalID: 401403691
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bunny_Hover_13
-      rect:
-        serializedVersion: 2
-        x: 650
-        y: 0
-        width: 50
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 11e1029c1efb0324c858630e64ada0ed
-      internalID: -2075636410
+      spriteID: bc4ccb68f521d7441b854511d79d557b
+      internalID: -1608635760
       vertices: []
       indices: 
       edges: []
@@ -409,20 +304,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Bunny_Hover_0: 413809012
-      Bunny_Hover_1: 1919744945
-      Bunny_Hover_10: 1986034685
-      Bunny_Hover_11: -1806401836
-      Bunny_Hover_12: 401403691
-      Bunny_Hover_13: -2075636410
-      Bunny_Hover_2: -1811593566
-      Bunny_Hover_3: 948549227
-      Bunny_Hover_4: 202586750
-      Bunny_Hover_5: -867608076
-      Bunny_Hover_6: 2106590048
-      Bunny_Hover_7: 531133507
-      Bunny_Hover_8: 1040530101
-      Bunny_Hover_9: 433446854
+      Bunny_Dash_0: -818832331
+      Bunny_Dash_1: -1641367722
+      Bunny_Dash_2: -2016437153
+      Bunny_Dash_3: 583521989
+      Bunny_Dash_4: -358390597
+      Bunny_Dash_5: 269078560
+      Bunny_Dash_6: -377072466
+      Bunny_Dash_7: 766606920
+      Bunny_Dash_8: -1608635760
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

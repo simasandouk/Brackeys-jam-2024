@@ -33,6 +33,7 @@ public class PlayerScript : MonoBehaviour
     {
         animator.SetFloat("X_velocity", Math.Abs(rb.velocity.x));
         animator.SetFloat("Y_velocity", Math.Abs(rb.velocity.y));
+        animator.SetBool("Is_dashing", Is_dashing);
         RaycastHit2D ground = Physics2D.Raycast(transform.position, Vector2.down);
         if (ground.collider != null)
         {

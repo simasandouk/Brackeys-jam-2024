@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1d461f82339be9941a1fded5f9b5832a
+guid: 243e4d315042aea48b96c17edad24982
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hovering-bunny_0
+      name: wakling-bunny_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 780ffe513a61a2a4cb5c7552af3046f8
-      internalID: -59945426
+      spriteID: 412e16e700f19144bb3f4d68b7fa84c0
+      internalID: 1506736056
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hovering-bunny_1
+      name: wakling-bunny_1
       rect:
         serializedVersion: 2
         x: 45
@@ -140,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6186981cbe6bd0148936d3c920e0ac2c
-      internalID: -1588422441
+      spriteID: 9efa8d7e97b9cd64c8a0e33d2667a5d3
+      internalID: -1611593838
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hovering-bunny_2
+      name: wakling-bunny_2
       rect:
         serializedVersion: 2
         x: 90
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd074edca3e9512429aab96508e8fb16
-      internalID: 1857344539
+      spriteID: c499efa952616c9418953b7975e23539
+      internalID: 1000707843
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hovering-bunny_3
+      name: wakling-bunny_3
       rect:
         serializedVersion: 2
         x: 135
@@ -182,14 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54d8814ed99fde84188103963e74a2ec
-      internalID: -454236950
+      spriteID: 206a7642abc3f9e4c96e35cdbf89bac3
+      internalID: -295311753
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hovering-bunny_4
+      name: wakling-bunny_4
       rect:
         serializedVersion: 2
         x: 180
@@ -203,29 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45dd507b81c7eb944ba6977f1b0cd648
-      internalID: 778194057
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hovering-bunny_5
-      rect:
-        serializedVersion: 2
-        x: 225
-        y: 0
-        width: 45
-        height: 45
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a88edbbfec637244689874dec3690b51
-      internalID: 1051471150
+      spriteID: 188712e36f50f954bb81764611ec0a7b
+      internalID: -1515799387
       vertices: []
       indices: 
       edges: []
@@ -241,12 +220,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      hovering-bunny_0: -59945426
-      hovering-bunny_1: -1588422441
-      hovering-bunny_2: 1857344539
-      hovering-bunny_3: -454236950
-      hovering-bunny_4: 778194057
-      hovering-bunny_5: 1051471150
+      wakling-bunny_0: 1506736056
+      wakling-bunny_1: -1611593838
+      wakling-bunny_2: 1000707843
+      wakling-bunny_3: -295311753
+      wakling-bunny_4: -1515799387
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
