@@ -1971,7 +1971,7 @@ MonoBehaviour:
   Prev_pos: -1
   pos: 0
   Max_velocity: 15
-  maxHeight: 2
+  maxHeight: 4
   rb: {fileID: 514006567084964040}
   Dash_speed: 500
   Dash_duration: 0.15
@@ -2058,7 +2058,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7473061666239222033}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
