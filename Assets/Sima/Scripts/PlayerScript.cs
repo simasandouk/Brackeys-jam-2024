@@ -24,13 +24,13 @@ public class PlayerScript : MonoBehaviour
         Can_dash = true;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         // raycasting to make sure player is within the max height
         RaycastHit2D ground = Physics2D.Raycast(transform.position, Vector2.down);
         if (ground.collider != null)
         {
-            Debug.Log(ground.point.y - transform.position.y);
+            //Debug.Log(ground.point.y - transform.position.y);
             Can_up = true;
             if (math.abs(ground.point.y - transform.position.y) >= maxHeight)
             {
@@ -89,14 +89,14 @@ public class PlayerScript : MonoBehaviour
         }
         pos = Mathf.Round(transform.position.x);
 
-        logic.playerSpeedNormalized = math.abs(rb.velocity.x / MaxSpeed);
+        logic.playerSpeedNormalized = math.abs(rb.velocity.x);
     }
 
     private IEnumerator Dash()
     {
         Can_dash = false;
         Is_dashing = true;
-        rb.velocity = new Vector2(Dash_speed * Time.deltaTime * direction.x * 10, rb.velocity.y);
+        rb.velocity += new Vector2(Dash_speed * Time.deltaTime * direction.x * 10, rb.velocity.y);
         yield return new WaitForSeconds(Dash_duration);
         Is_dashing = false;
         yield return new WaitForSeconds(Dash_cooldown);

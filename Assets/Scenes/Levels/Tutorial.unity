@@ -168,7 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wind: {fileID: 0}
   playerSpeedNormalized: 0
-  maxWindStrength: 10
+  WindStrength: 10
 --- !u!1 &432185965
 GameObject:
   m_ObjectHideFlags: 0
@@ -1223,9 +1223,10 @@ MonoBehaviour:
   Prev_pos: -1
   pos: 0
   Max_velocity: 15
+  maxHeight: 2
+  MaxSpeed: 15
   rb: {fileID: 514006567084964040}
   Dash_speed: 100
   Dash_duration: 0.15
   Dash_cooldown: 1
   logic: {fileID: 0}
-  maxHeight: 2
