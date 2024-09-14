@@ -41,10 +41,10 @@ public class LogicScript : MonoBehaviour
         }
         if (playerSpeedNormalized >= MaxNormalized)
         {
-                LetThereBeLightning(); 
+            LetThereBeLightning();
         }
-        Speed.fillAmount = playerSpeedNormalized/2;
-        Speed.color = Color.Lerp(clr, Color.red, playerSpeedNormalized/2);
+        Speed.fillAmount = playerSpeedNormalized / 2;
+        Speed.color = Color.Lerp(clr, Color.red, playerSpeedNormalized / 2);
     }
     public void LetThereBeLightning()
     {

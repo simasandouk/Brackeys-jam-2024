@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LeafCloudPlatformScript : MonoBehaviour
+public class LeafPlatformScript : MonoBehaviour
 {
     private LogicScript logic;
     public bool isLeaf;
@@ -19,25 +19,11 @@ public class LeafCloudPlatformScript : MonoBehaviour
     {
         if (logic.stormy)
         {
-            if (isLeaf)
-            {
-                rigidBody.simulated = false;
-            }
-            else
-            {
-                rigidBody.simulated = true;
-            }
+            rigidBody.simulated = false;
         }
         else
         {
-            if (isLeaf)
-            {
-                rigidBody.simulated = true;
-            }
-            else
-            {
-                rigidBody.simulated = false;
-            }
+            rigidBody.simulated = true;
         }
     }
 }

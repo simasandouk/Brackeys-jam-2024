@@ -37,7 +37,7 @@ public class PlayerScript : MonoBehaviour
         RaycastHit2D ground = Physics2D.Raycast(transform.position, Vector2.down);
         if (ground.collider != null)
         {
-            Debug.Log(ground.point.y - transform.position.y);
+            //Debug.Log(ground.point.y - transform.position.y);
             Can_up = true;
             if (math.abs(ground.point.y - transform.position.y) >= maxHeight)
             {
@@ -98,7 +98,7 @@ public class PlayerScript : MonoBehaviour
         }
         pos = Mathf.Round(transform.position.x);
 
-        logic.playerSpeedNormalized = math.abs(rb.velocity.x)/logic.MaxSpeed;
+        logic.playerSpeedNormalized = math.abs(rb.velocity.x) / logic.MaxSpeed;
         //UnityEngine.Debug.Log(rb.velocity.x);
     }
 
