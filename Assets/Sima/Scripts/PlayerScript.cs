@@ -88,7 +88,7 @@ public class PlayerScript : MonoBehaviour
         }
 
         // dashing (uwu)
-        if (Input.GetKeyDown(KeyCode.LeftShift) && Can_dash)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && Can_dash && direction.x != 0)
         {
             StartCoroutine(Dash());
         }
