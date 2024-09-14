@@ -96,7 +96,7 @@ public class PlayerScript : MonoBehaviour
     {
         Can_dash = false;
         Is_dashing = true;
-        rb.velocity += new Vector2(Dash_speed * Time.deltaTime * direction.x * 10, rb.velocity.y);
+        rb.velocity += new Vector2(Dash_speed * Time.deltaTime * direction.x, rb.velocity.y);
         yield return new WaitForSeconds(Dash_duration);
         Is_dashing = false;
         yield return new WaitForSeconds(Dash_cooldown);

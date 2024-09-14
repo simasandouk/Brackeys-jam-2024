@@ -34,7 +34,7 @@ public class LogicScript : MonoBehaviour
         {
             Wind_dir *= -1;
         }
-        if (playerSpeedNormalized >= 15)
+        if (playerSpeedNormalized >= 21)
         {
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
