@@ -1319,7 +1319,7 @@ MonoBehaviour:
   maxHeight: 2
   MaxSpeed: 13
   rb: {fileID: 514006567084964040}
-  Dash_speed: 50
+  Dash_speed: 500
   Dash_duration: 0.15
   Dash_cooldown: 1
   logic: {fileID: 0}
