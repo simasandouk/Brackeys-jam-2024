@@ -12,6 +12,7 @@ public class LogicScript : MonoBehaviour
     public bool stormy;
     public GameObject lightningBolt;
     public Image Speed;
+    private Color clr;
     private float timer = 0;
     public float lightningInterval;
     // Start is called before the first frame update
@@ -19,6 +20,7 @@ public class LogicScript : MonoBehaviour
     {
         wind = GameObject.FindGameObjectWithTag("Wind").GetComponent<AreaEffector2D>();
         SetWindSide(1);
+        clr = Speed.color;
         stormy = false;
     }
 
@@ -43,7 +45,8 @@ public class LogicScript : MonoBehaviour
                 LetThereBeLightning();
             }
         }
-        Speed.fillAmount = playerSpeedNormalized/24;
+        Speed.fillAmount = playerSpeedNormalized / 24;
+        Speed.color = Color.Lerp(clr, Color.red, playerSpeedNormalized / 24);
     }
     public void LetThereBeLightning()
     {
