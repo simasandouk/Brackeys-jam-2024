@@ -8,7 +8,7 @@ using UnityEngine.Animations;
 
 public class PlayerScript : MonoBehaviour
 {
-    public float Movement_speed, Prev_pos = -1, pos = -1, Max_velocity, maxHeight, MaxSpeed;
+    public float Movement_speed, Prev_pos = -1, pos = -1, Max_velocity, maxHeight;
     public Rigidbody2D rb;
     [SerializeField] float Dash_speed = 100;
     [SerializeField] float Dash_duration = 1f;
@@ -16,19 +16,22 @@ public class PlayerScript : MonoBehaviour
     public LogicScript logic;
     private Vector2 direction;
     private bool Is_dashing, Can_dash, Can_up = true;
-    private float timer = 0.4f;
+    private float timer = 2f;
     private SpriteRenderer bunny;
+    public bool Is_grounded;
+    private Animator animator;
 
     void Start()
     {
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
         Can_dash = true;
         bunny = gameObject.GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()
     {
-        // raycasting to make sure player is within the max height
+        animator.SetFloat("X_velocity", Math.Abs(rb.velocity.x));
         RaycastHit2D ground = Physics2D.Raycast(transform.position, Vector2.down);
         if (ground.collider != null)
         {
@@ -48,7 +51,7 @@ public class PlayerScript : MonoBehaviour
         if (timer <= 0)
         {
             Prev_pos = pos;
-            timer = 0.4f;
+            timer = 2f;
         }
         if (Is_dashing) return;
 
@@ -93,7 +96,8 @@ public class PlayerScript : MonoBehaviour
         }
         pos = Mathf.Round(transform.position.x);
 
-        logic.playerSpeedNormalized = math.abs(rb.velocity.x);
+        logic.playerSpeedNormalized = math.abs(rb.velocity.x)/logic.MaxSpeed;
+        UnityEngine.Debug.Log(rb.velocity.x);
     }
 
     private IEnumerator Dash()
@@ -105,5 +109,17 @@ public class PlayerScript : MonoBehaviour
         Is_dashing = false;
         yield return new WaitForSeconds(Dash_cooldown);
         Can_dash = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D trigger)
+    {
+        Is_grounded = true;
+        animator.SetBool("Is_hovering", !Is_grounded);
+    }
+
+    private void OnTriggerExit2D(Collider2D trigger)
+    {
+        Is_grounded = false;
+        animator.SetBool("Is_hovering", !Is_grounded);
     }
 }

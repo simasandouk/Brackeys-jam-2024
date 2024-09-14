@@ -7,7 +7,7 @@ public class LogicScript : MonoBehaviour
 {
     public AreaEffector2D wind;
     public float playerSpeedNormalized;
-    public float WindStrength;
+    public float WindStrength, MaxSpeed, MaxNormalized;
     private float Wind_dir = 1;
     public bool stormy;
     public GameObject lightningBolt;
@@ -39,15 +39,12 @@ public class LogicScript : MonoBehaviour
         {
             Wind_dir *= -1;
         }
-        if (playerSpeedNormalized >= 21)
+        if (playerSpeedNormalized >= MaxNormalized)
         {
-            if (Input.GetKeyDown(KeyCode.LeftShift))
-            {
-                LetThereBeLightning();
-            }
+                LetThereBeLightning(); 
         }
-        Speed.fillAmount = playerSpeedNormalized / 24;
-        Speed.color = Color.Lerp(clr, Color.red, playerSpeedNormalized / 24);
+        Speed.fillAmount = playerSpeedNormalized/2;
+        Speed.color = Color.Lerp(clr, Color.red, playerSpeedNormalized/2);
     }
     public void LetThereBeLightning()
     {
