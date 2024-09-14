@@ -31,6 +31,7 @@ public class LogicScript : MonoBehaviour
         {
             timer = 0;
             lightningBolt.SetActive(false);
+            stormy = false;
         }
         else if (stormy)
             timer += Time.deltaTime;
@@ -64,7 +65,7 @@ public class LogicScript : MonoBehaviour
     {
         wind.forceAngle = (Wind_dir * dir == 1) ? 0 : 180;
         wind.forceMagnitude = WindStrength;
-        wind.forceVariation = WindStrength;
+        wind.forceVariation = WindStrength / 3;
     }
 
     public void StopWind()
