@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2321818338706150230
+--- !u!1 &2758468793134851836
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,37 +8,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6561594935109450856}
-  - component: {fileID: 4825932227656724709}
+  - component: {fileID: 1678098236604595496}
+  - component: {fileID: 8939708214205911408}
   m_Layer: 0
-  m_Name: Key Sign
+  m_Name: Storm Sign
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6561594935109450856
+--- !u!4 &1678098236604595496
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2321818338706150230}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_GameObject: {fileID: 2758468793134851836}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.38, y: -0.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4826331221213689844}
+  m_Father: {fileID: 6461059215066871888}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &4825932227656724709
+--- !u!212 &8939708214205911408
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2321818338706150230}
+  m_GameObject: {fileID: 2758468793134851836}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: b4c80be69229d5941ac28b423d47953c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b37c72654c5cbe143becca4d3eb6c63f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &4826331221213689840
+--- !u!1 &6461059215066871884
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,41 +92,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4826331221213689844}
-  - component: {fileID: 4826331221213689845}
-  - component: {fileID: 4826331221213689846}
-  - component: {fileID: 4826331221213689847}
-  - component: {fileID: 7340306243195802249}
+  - component: {fileID: 6461059215066871888}
+  - component: {fileID: 6461059215066871887}
+  - component: {fileID: 6461059215066871886}
+  - component: {fileID: 6461059215066871885}
+  - component: {fileID: 6461059215066871889}
   m_Layer: 0
-  m_Name: Key Door
+  m_Name: Storm Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4826331221213689844
+--- !u!4 &6461059215066871888
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4826331221213689840}
+  m_GameObject: {fileID: 6461059215066871884}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.92, y: -3.66, z: 0.76531523}
+  m_LocalPosition: {x: 1.78, y: -3.66, z: 0.76531523}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6561594935109450856}
+  - {fileID: 1678098236604595496}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &4826331221213689845
+--- !u!212 &6461059215066871887
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4826331221213689840}
+  m_GameObject: {fileID: 6461059215066871884}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -166,48 +166,48 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.12, y: 0.37}
+  m_Size: {x: 1.4375, y: 2.3125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &4826331221213689846
+--- !u!61 &6461059215066871886
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4826331221213689840}
-  m_Enabled: 1
+  m_GameObject: {fileID: 6461059215066871884}
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.012068033, y: -0.044691205}
+  m_Offset: {x: 0.34435368, y: -0.041105747}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.75, y: 2.3125}
-    newSize: {x: 0.12, y: 0.37}
+    newSize: {x: 1.4375, y: 2.3125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.30210066, y: 2.1077464}
+  m_Size: {x: 0.43987083, y: 2.0492778}
   m_EdgeRadius: 0
---- !u!50 &4826331221213689847
+--- !u!50 &6461059215066871885
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4826331221213689840}
+  m_GameObject: {fileID: 6461059215066871884}
   m_BodyType: 0
-  m_Simulated: 1
+  m_Simulated: 0
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -219,17 +219,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!114 &7340306243195802249
+--- !u!114 &6461059215066871889
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4826331221213689840}
+  m_GameObject: {fileID: 6461059215066871884}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2f2592b72d229349ba9e2945a81f632, type: 3}
+  m_Script: {fileID: 11500000, guid: dac9a4df5b0194b4baf9800576d473a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   opened: {fileID: 21300000, guid: 67160ec493a850e45ae5498b5214de80, type: 3}
   closed: {fileID: 21300000, guid: b7e8af96620e8f44493f914016d48fac, type: 3}
+  logic: {fileID: 0}

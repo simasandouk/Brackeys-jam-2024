@@ -17,11 +17,13 @@ public class PlayerScript : MonoBehaviour
     private Vector2 direction;
     private bool Is_dashing, Can_dash, Can_up = true;
     private float timer = 0.4f;
+    private SpriteRenderer bunny;
 
     void Start()
     {
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
         Can_dash = true;
+        bunny = gameObject.GetComponent<SpriteRenderer>();
     }
 
     void FixedUpdate()
@@ -65,12 +67,14 @@ public class PlayerScript : MonoBehaviour
             direction.x = -1;
             if (Prev_pos != pos)
                 logic.SetWindSide(-1);
+            bunny.flipX = true;
         }
         else if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
         {
             direction.x = 1;
             if (Prev_pos != pos)
                 logic.SetWindSide(1);
+            bunny.flipX = false;
         }
         else
         {
