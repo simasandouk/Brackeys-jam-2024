@@ -130,6 +130,7 @@ public class PlayerScript : MonoBehaviour
 
     private IEnumerator DisableCollision()
     {
+        rb.velocity = new Vector2 (rb.velocity.x, 0f);
         BoxCollider2D platformCollider = currentOneWayPlatform.GetComponent<BoxCollider2D>();
         Physics2D.IgnoreCollision(playerCollider, platformCollider);
         yield return new WaitForSeconds(1f);

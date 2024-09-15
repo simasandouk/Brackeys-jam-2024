@@ -64,9 +64,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: Is_dashing
     m_EventTreshold: 0
-  - m_ConditionMode: 1
-    m_ConditionEvent: Is_hovering
-    m_EventTreshold: 0
+  - m_ConditionMode: 3
+    m_ConditionEvent: Y_velocity
+    m_EventTreshold: 0.15
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1295181321425526553}
   m_Solo: 0
@@ -222,13 +222,13 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -1295181321425526553}
-    m_Position: {x: 40, y: 70, z: 0}
+    m_Position: {x: 110, y: 230, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1285506754702604998}
-    m_Position: {x: -50, y: 200, z: 0}
+    m_Position: {x: -150, y: 240, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8751698093880483422}
-    m_Position: {x: 290, y: 100, z: 0}
+    m_Position: {x: 120, y: 110, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 7614328561404793437}
@@ -251,7 +251,10 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 3
     m_ConditionEvent: Y_velocity
-    m_EventTreshold: 0.5
+    m_EventTreshold: 0.15
+  - m_ConditionMode: 2
+    m_ConditionEvent: Is_dashing
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1295181321425526553}
   m_Solo: 0
