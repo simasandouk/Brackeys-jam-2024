@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LogicScript : MonoBehaviour
@@ -14,6 +16,7 @@ public class LogicScript : MonoBehaviour
     public Sprite Calm;
     public Sprite Storm;
     public Image Indicator_sr;
+    public float windSpeed;
     private Color clr;
     private float timer = 0;
     public float lightningInterval;
@@ -51,6 +54,12 @@ public class LogicScript : MonoBehaviour
         }
         Speed.fillAmount = playerSpeedNormalized / 2;
         Speed.color = Color.Lerp(clr, Color.red, playerSpeedNormalized / 2);
+        if (!stormy)
+            windSpeed = WindStrength * Wind_dir;
+        else
+        {
+            windSpeed = WindStrength * 4;
+        }
     }
     public void LetThereBeLightning()
     {
@@ -59,6 +68,16 @@ public class LogicScript : MonoBehaviour
         lightningBolt.SetActive(true);
         LightningBolt2.SetActive(true);
         timer = 0;
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
 }

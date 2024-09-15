@@ -13,11 +13,13 @@ public class PressurePlateScript : MonoBehaviour
     public float distanceToGoDown;
     public float movingSpeed;
     bool allTheWay;
+    public GameObject endGame;
     // Start is called before the first frame update
     void Start()
     {
         moveBack = false;
         originalPos = transform.position;
+        endGame = GameObject.FindGameObjectWithTag("end");
     }
 
     // Update is called once per frame
@@ -55,7 +57,8 @@ public class PressurePlateScript : MonoBehaviour
         {
             allTheWay = true;
             // you can add a function from the editor
-            pressureEvent.Invoke();
+            Time.timeScale = 0;
+            endGame.SetActive(true);
         }
     }
 

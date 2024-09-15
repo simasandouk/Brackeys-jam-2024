@@ -8,6 +8,7 @@ TagManager:
   - Undefined
   - Wind
   - OneWayPlatform
+  - end
   layers:
   - Default
   - TransparentFX
