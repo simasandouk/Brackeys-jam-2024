@@ -9,7 +9,7 @@ public class LogicScript : MonoBehaviour
     public float WindStrength, MaxSpeed, MaxNormalized;
     public float Wind_dir = 1;
     public bool stormy;
-    public GameObject lightningBolt;
+    public GameObject lightningBolt, LightningBolt2;
     public Image Speed;
     private Color clr;
     private float timer = 0;
@@ -25,11 +25,15 @@ public class LogicScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (timer >= 0.5)
+        {
+            lightningBolt.SetActive(false);
+            LightningBolt2.SetActive(false);
+        }
         if (timer >= lightningInterval)
         {
-            timer = 0;
-            lightningBolt.SetActive(false);
             stormy = false;
+            timer = 0;
         }
         else if (stormy)
             timer += Time.deltaTime;
@@ -48,6 +52,7 @@ public class LogicScript : MonoBehaviour
     {
         stormy = true;
         lightningBolt.SetActive(true);
+        LightningBolt2.SetActive(true);
         timer = 0;
     }
 
