@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -26,6 +25,7 @@ public class LogicScript : MonoBehaviour
     {
         clr = Speed.color;
         stormy = false;
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame

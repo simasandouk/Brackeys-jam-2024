@@ -19,7 +19,7 @@ public class PressurePlateScript : MonoBehaviour
     {
         moveBack = false;
         originalPos = transform.position;
-        endGame = GameObject.FindGameObjectWithTag("end");
+        //endGame = GameObject.FindGameObjectWithTag("end");
     }
 
     // Update is called once per frame
