@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeedNormalized: 0
-  WindStrength: 12
+  WindStrength: 6
   MaxSpeed: 6
   MaxNormalized: 2.65
   Wind_dir: 1
@@ -6243,7 +6243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upWind: {fileID: 1555814666}
-  upWindMultiplier: 1
+  upWindMultiplier: 3
   upWindInterval: 0.2
 --- !u!61 &1555814665
 BoxCollider2D:
@@ -7262,7 +7262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c861d07d94809fc4ca52567b2230c24b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Movement_speed: 8
+  Movement_speed: 14.5
   Prev_pos: -1
   pos: 0
   Max_velocity: 15
