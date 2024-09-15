@@ -11,6 +11,9 @@ public class LogicScript : MonoBehaviour
     public bool stormy;
     public GameObject lightningBolt, LightningBolt2;
     public Image Speed;
+    public Sprite Calm;
+    public Sprite Storm;
+    public Image Indicator_sr;
     private Color clr;
     private float timer = 0;
     public float lightningInterval;
@@ -33,6 +36,7 @@ public class LogicScript : MonoBehaviour
         if (timer >= lightningInterval)
         {
             stormy = false;
+            Indicator_sr.sprite = Calm;
             timer = 0;
         }
         else if (stormy)
@@ -51,6 +55,7 @@ public class LogicScript : MonoBehaviour
     public void LetThereBeLightning()
     {
         stormy = true;
+        Indicator_sr.sprite = Storm;
         lightningBolt.SetActive(true);
         LightningBolt2.SetActive(true);
         timer = 0;
